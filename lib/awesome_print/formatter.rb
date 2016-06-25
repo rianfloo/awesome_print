@@ -4,6 +4,7 @@
 # See LICENSE file or http://www.opensource.org/licenses/mit-license.php
 #------------------------------------------------------------------------------
 require_relative "formatters/object_formatter"
+require_relative "formatters/struct_formatter"
 require_relative "formatters/hash_formatter"
 require_relative "formatters/array_formatter"
 require_relative "formatters/simple_formatter"
@@ -92,7 +93,7 @@ module AwesomePrint
     end
 
     def awesome_struct(s)
-      Formatters::ObjectFormatter.new(s, s.members, @inspector).format
+      Formatters::StructFormatter.new(s, @inspector).format
     end
 
     def awesome_method(m)
